@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+
 const items = [
   { en: "Subscription management", ar: "إدارة الاشتراكات" },
   { en: "Customer control", ar: "إدارة العملاء" },

@@ -94,53 +94,53 @@ const steps = [
   {
     id: 1,
     label: {
-      en: "Tell us who you are",
-      ar: "أخبرنا من أنت",
+      en: "Create your merchant dashboard",
+      ar: "أنشئ لوحة تحكم التاجر",
     },
     description: {
-      en: "A two-minute quiz maps your body, goals, and kitchen vocabulary. No scales, no guesswork, just you, on paper.",
-      ar: "اختبار لمدة دقيقتين يحدد جسمك وأهدافك ومفاهيمك الغذائية. بدون موازين أو تخمين، بكل بساطة",
+      en: "Sign up on Bitely and access your dedicated dashboard to manage your subscription business from one place.",
+      ar: "سجل في Bitely واحصل على لوحة تحكم خاصة لإدارة نظام الاشتراكات من مكان واحد.",
     },
-    image: "/media/images/how-it-works/how-1.jpg",
+    image: "/media/images/how-it-works/how-merchant-1.jpg",
     side: "left",
   },
   {
     id: 2,
     label: {
-      en: "The chefs plot your week",
-      ar: "يخطط الطهاة أسبوعك بكل عناية واهتمام",
+      en: "Design your branded subscription page",
+      ar: "صمم صفحة اشتراكات بعلامتك التجارية",
     },
     description: {
-      en: "Seventeen seasonal dishes, rotated every Sunday. Swap any plate, pause any day. Your preferences learn with you.",
-      ar: "سبعة عشر طبقًا تتغير كل يوم أحد. يمكنك تبديل أي وجبة أو إيقاف أي يوم، تفضيلاتك أولوية دائما .",
+      en: "Your public page (bitely.com/merchant-id) is automatically generated with your branding, colors, menu, and subscription plans.",
+      ar: "يتم إنشاء صفحة خاصة بك (bitely.com/merchant-id) تلقائيًا بتصميمك، ألوانك، قوائمك وخطط الاشتراك الخاصة بك.",
     },
-    image: "/media/images/how-it-works/how-2.jpg",
+    image: "/media/images/how-it-works/how-merchant-2.jpg",
     side: "right",
   },
   {
     id: 3,
     label: {
-      en: "We cook. You sleep.",
-      ar: " نطبخ لك ، وأنت ترتاح",
+      en: "Customers subscribe through your page",
+      ar: "العملاء يشتركون عبر صفحتك",
     },
     description: {
-      en: "Made fresh overnight in our own kitchens. Nothing frozen, nothing shipped. By sunrise it's already on the way.",
-      ar: "يتم تحضير وجبتك طازجة خلال المساء. لا شيء مجمد ولا يتم شحنه. مع شروق الشمس تكون في طريقها إليك طازجة.",
+      en: "Customers visit your dedicated page, choose their meal plans, and subscribe directly with a seamless checkout experience.",
+      ar: "يقوم العملاء بزيارة صفحتك الخاصة، اختيار خطط الوجبات، والاشتراك بسهولة من خلال تجربة دفع سلسة.",
     },
-    image: "/media/images/how-it-works/how-3.jpg",
+    image: "/media/images/how-it-works/how-merchant-3.jpg",
     side: "left",
   },
   {
     id: 4,
     label: {
-      en: "Breakfast knocks.",
-      ar: "يطرق الإفطار بابك في الصباح",
+      en: "Manage & grow your subscriptions",
+      ar: "إدارة وتنمية الاشتراكات",
     },
     description: {
-      en: "Between 6 and 9 am, a cooled box arrives at your door. Open. Warm if you like. Log it with a tap. Repeat.",
-      ar: "بين الساعة 6 و9 صباحًا، تصلك وجبتك إلى بابك. افتحها، سخنها إن أردت، واستمتع بإفطار شهي وصحي.",
+      en: "Control everything from your dashboard, customers, menus, schedules, and analytics, and scale your recurring revenue.",
+      ar: "تحكم بكل شيء من لوحة التحكم ، العملاء، القوائم، الجداول، والتحليلات ، ووسّع إيراداتك المتكررة بسهولة.",
     },
-    image: "/media/images/how-it-works/how-4.jpg",
+    image: "/media/images/how-it-works/how-merchant-4.jpg",
     side: "right",
   },
 ];
@@ -200,7 +200,7 @@ export default function HowItWorks() {
                     src={step.image}
                     alt={step.label[lang]}
                     fill
-                    className="object-cover"
+                    className="object-cover object-top-left"
                   />
                 </motion.div>
 

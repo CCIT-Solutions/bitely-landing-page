@@ -20,7 +20,7 @@ function Home() {
     >
       <Hero /> 
       {/* <Menu/> */}
-      {/* <HowItWorks /> */}
+      <HowItWorks />
      
       {/* <Testimonial /> */}
       {/* <FindYourPLan />  */}
