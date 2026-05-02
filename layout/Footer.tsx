@@ -99,11 +99,11 @@ export default function Footer({
 
                   <div className="flex flex-col gap-8">
                     <MaybeLink href="/menu">
-                      <Translate text="footer.links.menu" />
+                      <Translate text="footer.links.blog" />
                     </MaybeLink>
 
                     <MaybeLink href="/contact">
-                      <Translate text="footer.links.contact" />
+                      <Translate text="footer.links.support" />
                     </MaybeLink>
                   </div>
                 </div>

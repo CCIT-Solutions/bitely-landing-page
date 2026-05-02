@@ -1,12 +1,12 @@
 {
   "nav": {
     "home": "Home",
-    "menu": "Menu",
+    "blog": "Blog",
     "plans": "Plans",
     "howItWork": "How It Work",
     "features": "Features",
     "faq": "FAQ",
-    "contact": "Contact"
+    "support": "Support"
   },
 
   "footer": {
@@ -16,9 +16,9 @@
       "plans": "Plans",
       "listing": "Listing",
       "account": "Account",
-      "menu": "Menu",
+      "blog": "Blog",
       "faq": "FAQ",
-      "contact": "Contact",
+      "support": "Support",
       "privacy": "Privacy Policy",
       "terms": "Terms & Conditions"
     },

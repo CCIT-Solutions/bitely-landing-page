@@ -107,12 +107,12 @@ const HeroSection = () => {
         `}
         style={float1Style}
       >
-        <Image
+        {/* <Image
           src="/media/images/hero/float-1.png"
           alt="healthy meals"
           fill
           className="object-contain"
-        />
+        /> */}
       </div>
 
       {/* ── Float 3 — inset-s side ── */}
@@ -127,10 +127,9 @@ const HeroSection = () => {
         `}
         style={float3Style}
       >
-        <Image
+        {/* <Image
           src="/media/images/hero/float-3.png"
           alt="healthy meals"
-          /* Smaller on mobile/tablet, original on lg */
           width={100}
           height={135}
           className="
@@ -139,7 +138,7 @@ const HeroSection = () => {
             md:w-32.5
             lg:w-42.5
           "
-        />
+        /> */}
       </div>
 
       <Container className="flex flex-col justify-between gap-8 sm:gap-10 lg:gap-14">

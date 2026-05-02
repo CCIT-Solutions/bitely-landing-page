@@ -19,8 +19,8 @@ function Home() {
       className="min-h-screen "
     >
       <Hero /> 
-      <Menu/>
-      <HowItWorks />
+      {/* <Menu/> */}
+      {/* <HowItWorks /> */}
      
       {/* <Testimonial /> */}
       {/* <FindYourPLan />  */}

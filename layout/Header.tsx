@@ -28,12 +28,12 @@ import { fade } from "@/lib/animation";
 
 const navItems = (t: TFunction) => [
   { label: t("nav.home"), href: "/" },
-  { label: t("nav.menu"), href: "/menu" },
+  { label: t("nav.blog"), href: "/blog" },
   { label: t("nav.plans"), href: "/plans" },
   { label: t("nav.howItWork"), href: "/#howItWork" },
-  // { label: t("nav.features"), href: "/#features" },
+  { label: t("nav.features"), href: "/#features" },
   { label: t("nav.faq"), href: "/faq" },
-  { label: t("nav.contact"), href: "/contact" },
+  { label: t("nav.support"), href: "/support" },
 ];
 
 function Header({ className }: { className?: string }) {
