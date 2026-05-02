@@ -286,10 +286,7 @@ const HeroSection = () => {
                 relative md:absolute 
                 md:bottom-[-50%] xl:inset-e-0 md:inset-e-[15%] xl:-inset-s-20 xl:z-10
                 w-full h-80
-                md:w-100 md:h-75
-             
-                
-                
+                md:w-115 md:h-75
               "
             >
               <Image
