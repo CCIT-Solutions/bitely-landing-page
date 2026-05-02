@@ -5,7 +5,6 @@ import Animate from "@/components/animation/Animate";
 import { fade, fadeDu1, fadeDu2 } from "@/lib/animation";
 import Image from "next/image";
 import { GoArrowRight } from "react-icons/go";
-import MealPlanner from "./MealPlanner";
 import Ticker from "./Ticker";
 import { heroSlides } from "@/data/heroslider";
 import { useLang } from "@/hooks/useLang";
@@ -155,40 +154,39 @@ const HeroSection = () => {
             className="
               w-full
               flex flex-col items-center justify-center
-              space-y-3 sm:space-y-4
+              space-y-3 sm:space-y-2
               /* lg: original */
-              xl:items-start xl:justify-start xl:pt-12
+              xl:items-start xl:justify-start pt-12
             "
           >
             {/* Heading */}
-            <div className="text-center lg:text-start">
+            <div className="text-center xl:text-start">
               <Animate
                 variants={fade}
                 element="h2"
                 className="
                   font-bold text-foreground
-                  text-4xl sm:text-[42px] md:text-[48px] xl:text-[55px]
+                  text-3xl sm:text-[26px] md:text-[28px] xl:text-[35px]
                   max-w-sm sm:max-w-md lg:max-w-lg
-                  leading-tight xl:leading-20
-                  mt-10
+                  leading-tight xl:leading-12
                 "
               >
                 <span
-                  className={`flex items-center justify-center gap-2  ${isRTL ? "flex-row lg:justify-end" : "flex-row lg:justify-start"}`}
+                  className={`flex items-center justify-center gap-1  ${isRTL ? "flex-row xl:justify-end" : "flex-row xl:justify-start"}`}
                   dir="ltr"
                 >
+                  <Translate text="home.hero.meals" />
                   <Image
-                    src={`/media/images/hero/healthy${isRTL ? "-ar" : ""}.png`}
-                    alt="healthy meals"
-                    width={160}
-                    height={116}
+                    src={`/media/images/hero/subscriptions${isRTL ? "-ar" : ""}.png`}
+                    alt="Meals Subscription"
+                    width={145}
+                    height={100}
                     className="
-                      w-32 h-auto
-                      sm:w-37.5
-                      xl:w-50
+                      w-30 h-auto
+                      sm:w-35
+                      xl:w-42
                     "
                   />
-                  <Translate text="home.hero.meals" />
                 </span>
 
                 <AnimatePresence mode="wait">
@@ -198,7 +196,7 @@ const HeroSection = () => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
-                    className="leading-snug mb-3 sm:mb-4"
+                    className="leading-snug mb-3"
                   >
                     {slide.title[lang]}
                   </motion.div>
@@ -214,7 +212,7 @@ const HeroSection = () => {
                 text-neutral-500 dark:text-neutral-400 leading-relaxed
                 text-sm sm:text-base
                 max-w-70 sm:max-w-xs lg:max-w-sm
-                text-center lg:text-start
+                text-center xl:text-start
               "
             >
               <Translate text="home.hero.description" />
@@ -246,8 +244,8 @@ const HeroSection = () => {
             {/* Floating leaf / decoration */}
             <motion.div
               animate={{
-                rotate: [0, -10, 0], // rotate left then back
-                y: [0, 10, 0], // move down 5px then back
+                rotate: [0, -10, 0],
+                y: [0, 10, 0],
               }}
               transition={{
                 duration: 2,
@@ -278,12 +276,34 @@ const HeroSection = () => {
             "
           >
             <HeroSlider currentSlide={currentSlide} />
-            <MealPlanner isRTL={isRTL}/>
+            <motion.div
+              whileHover={{
+                x: -8,
+                y: -14,
+                transition: { type: "spring", stiffness: 120, damping: 14 },
+              }}
+              className="
+                relative md:absolute 
+                md:bottom-[-50%] xl:inset-e-0 md:inset-e-[15%] xl:-inset-s-20 xl:z-10
+                w-full h-80
+                md:w-100 md:h-75
+             
+                
+                
+              "
+            >
+              <Image
+                src="/media/images/hero/dashboard.jpg"
+                alt="Dashboard"
+                fill
+                className="object-cover object-left overflow-hidden rounded-lg border border-primary/50"
+              />
+            </motion.div>
           </div>
         </div>
       </Container>
 
-      <Ticker  isRTL={isRTL}/>
+      <Ticker isRTL={isRTL} />
     </div>
   );
 };

@@ -64,8 +64,8 @@
   "home": {
     "hero": {
       "title_1": "Sleep more, eat",
-      "description": "Bitely makes healthy eating effortless. Discover meals from your favorite restaurants, subscribe with ease, and manage your weekly plan",
-      "getStarted": "See my Plan",
+      "description": "Turn your healthy meals into a subscription business. With Bitely, you can manage customers, streamline operations, and scale your recurring revenue with ease.",
+      "getStarted": "Get Started",
       "seeMenu": "See menu",
       "meals": "Meals"
     },
@@ -113,7 +113,6 @@
     "howItWorks": {
       "title": "From kitchen <custom>to kitchen</custom> counter",
       "subtitle": "A four-step rhythm that quietly becomes a weekly ritual. No prep, no dishes, no second-guessing."
-    
     },
     "faq": {
       "title": "Frequently Asked Questions",
@@ -153,11 +152,11 @@
     }
   },
 
- "menu": {
+  "menu": {
     "title": "Seventeen <custom>dishes.</custom> One week.",
     "subtitle": "The kitchen rotates every Sunday. Each plate is weighed, photographed, and logged, so your week reads like a magazine, not a meal plan",
     "seeFullMenu": "See full menu",
-      "protein": "Protein",
+    "protein": "Protein",
     "carbs": "Carbs",
     "fat": "Fat",
     "kcal": "kcal",
@@ -318,7 +317,7 @@
 
   "faq": {
     "title": "The <custom>small print</custom>, out loud",
-     "subtitle": "You can always contact us, Please connect with our friendly team, we will answer withing 4 minutes.",
+    "subtitle": "You can always contact us, Please connect with our friendly team, we will answer withing 4 minutes.",
     "stillHaveQuestions": "Still have questions?",
     "contactDescription": "If you cannot find answer to your question in our FAQ, you can always contact us, Please connect with our friendly team, we will answer shortly!",
     "contactButton": "Contact Us"

@@ -1,26 +1,26 @@
 export const heroSlides = [
   {
     id: 1,
-    image: "/media/images/hero/hero-1.jpg",
+    image: "/media/images/hero/merchant-1.jpg",
     title: {
-      en: "For Whole Family",
-      ar: "لكل أفراد العائلة",
+      en: "To Grow Your Subscription Business",
+      ar: "لتنمية أعمال الاشتراكات الخاصة بك",
     },
   },
   {
     id: 2,
-    image: "/media/images/hero/hero-2.jpg",
+    image: "/media/images/hero/merchant-2.jpg",
     title: {
-      en: "To Fuel Your Fitness",
-      ar: "تدعم نشاطك الرياضي",
+      en: "To Simplify Orders & Customer Management",
+      ar: "لتبسيط إدارة الطلبات والعملاء",
     },
   },
   {
     id: 3,
-    image: "/media/images/hero/hero-3.jpg",
+    image: "/media/images/hero/merchant-3.jpg",
     title: {
-      en: "For Busy Days",
-      ar: "تناسب وقت انشغالك",
+      en: "To Launch Your Own Branded Experience",
+      ar: "لإطلاق تجربة طلب بعلامتك التجارية",
     },
   },
 ];

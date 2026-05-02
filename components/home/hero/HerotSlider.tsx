@@ -17,7 +17,7 @@ const HeroSlider = ({ currentSlide }: HeroSliderProps) => {
     >
         <div
     
-    className="relative w-full h-110 overflow-hidden rounded-2xl border-3 border-primary">
+    className="relative w-full h-100 overflow-hidden rounded-2xl border border-primary/50">
         {heroSlides.map((item, idx) => (
           <Image
             key={item.id}
@@ -25,7 +25,7 @@ const HeroSlider = ({ currentSlide }: HeroSliderProps) => {
             alt={item.title.en}
             fill
             priority={idx === 0}
-            className="object-cover absolute top-0 left-0 transition-opacity duration-1000"
+            className="object-cover object-right absolute top-0 left-0 transition-opacity duration-1000"
             style={{
               opacity: idx === currentSlide ? 1 : 0,
             }}
