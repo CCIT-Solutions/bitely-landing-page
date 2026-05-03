@@ -40,7 +40,7 @@ export default function FAQ() {
               i18nKey={"faq.title"}
               components={{ custom: <span className="text-primary" /> }}
             />
-          <p className="text-neutral-500 dark:text-neutral-400 text-xl mt-4 max-w-md">
+          <p className="text-foreground/50 text-xl mt-4 max-w-md">
             {t("faq.subtitle")}
           </p>
         </Animate>
@@ -77,7 +77,7 @@ export default function FAQ() {
           </p>
           <Link
             href="/contact"
-            className="bg-primary hover:bg-primary/80 cursor-pointer text-foreground font-medium text-sm px-8 py-3.5 rounded-full transition-colors duration-200 shadow-sm"
+            className="bg-primary/90 hover:bg-primary cursor-pointer text-primary-foreground font-medium text-sm px-8 py-3.5 rounded-full transition-colors duration-200 shadow-sm"
           >
             {t("faq.contactButton")}
           </Link>

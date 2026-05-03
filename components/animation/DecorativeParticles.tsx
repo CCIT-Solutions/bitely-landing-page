@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
-import { SparklesCore } from "@/components/shared/sparkles";
+import { SparklesCore } from "@/components/shared/sparkles copy";
 import { cn } from "@/lib/utils";
 
 interface DecorativeParticlesProps {

@@ -16,7 +16,6 @@ type ParticlesProps = {
   maxSize?: number;
   speed?: number;
   particleColor?: string;
-   particleColors?: string[];
   particleDensity?: number;
 };
 export const SparklesCore = (props: ParticlesProps) => {
@@ -28,7 +27,6 @@ export const SparklesCore = (props: ParticlesProps) => {
     maxSize,
     speed,
     particleColor,
-    particleColors,
     particleDensity,
   } = props;
   const [init, setInit] = useState(false);
@@ -124,7 +122,7 @@ export const SparklesCore = (props: ParticlesProps) => {
                 },
               },
               color: {
-               value: particleColors || [particleColor || "#ffffff"],
+                value: particleColor || "#ffffff",
                 animation: {
                   h: {
                     count: 0,
@@ -242,7 +240,7 @@ export const SparklesCore = (props: ParticlesProps) => {
                 animation: {
                   count: 0,
                   enable: true,
-                  speed: speed ||.5,
+                  speed: speed || 4,
                   decay: 0,
                   delay: 0,
                   sync: false,
@@ -363,7 +361,7 @@ export const SparklesCore = (props: ParticlesProps) => {
                   sync: false,
                 },
                 duration: {
-                  value: 10,
+                  value: 0,
                   sync: false,
                 },
               },

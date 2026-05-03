@@ -69,6 +69,10 @@
       "seeMenu": "See menu",
       "meals": "Meals"
     },
+    "features": {
+      "title": "All you need to <custom>run & grow</custom> your meal subscriptions",
+      "description": "Bitely gives healthy meal merchants a full-stack subscription platform, from branded pages to powerful dashboards."
+    },
     "mealPlanner": {
       "header": {
         "title": "Your plan",
