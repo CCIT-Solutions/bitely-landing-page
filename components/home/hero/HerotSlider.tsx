@@ -25,6 +25,7 @@ const HeroSlider = ({ currentSlide }: HeroSliderProps) => {
             alt={item.title.en}
             fill
             priority={idx === 0}
+            fetchPriority="high"
             className="object-cover object-right absolute top-0 left-0 transition-opacity duration-1000"
             style={{
               opacity: idx === currentSlide ? 1 : 0,

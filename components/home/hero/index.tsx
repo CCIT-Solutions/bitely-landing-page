@@ -260,6 +260,7 @@ const HeroSection = () => {
                 width={90}
                 height={86}
                 className="mt-10 ms-20"
+                  fetchPriority="high"
               />
             </motion.div>
           </div>
@@ -292,6 +293,7 @@ const HeroSection = () => {
               <Image
                 src="/media/images/hero/dashboard.jpg"
                 alt="Dashboard"
+                  fetchPriority="high"
                 fill
                 className="object-cover object-left overflow-hidden rounded-lg border border-primary/50"
               />
