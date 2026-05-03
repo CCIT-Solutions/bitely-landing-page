@@ -327,8 +327,8 @@
     "contactButton": "Contact Us"
   },
 
-  "contact": {
-    "title": "Contact Us",
+  "support": {
+    "title": "Support",
     "subtitle": "You can always contact us, Please connect with our friendly team, we will answer shortly.",
     "firstName": "First Name",
     "firstNamePlaceholder": "Type Name",

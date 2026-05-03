@@ -115,7 +115,7 @@ export default function Pricing() {
     billing === "weekly" ? t("pricing.unit.weekly") : t("pricing.unit.monthly");
 
   return (
-    <section className="min-h-screen px-4 pt-20">
+    <section className="min-h-screen px-4 pt-24" id="plans">
       <div className="mx-auto max-w-5xl">
         {/* Heading */}
 

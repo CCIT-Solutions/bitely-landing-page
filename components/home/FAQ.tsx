@@ -29,7 +29,7 @@ export default function FAQ() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-20">
+    <div className="min-h-screen flex items-center justify-center px-4 pb-20 pt-24" id="faq">
       <div className="w-full ">
         {/* Header */}
 

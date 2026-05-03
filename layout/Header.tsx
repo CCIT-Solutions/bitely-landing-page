@@ -30,8 +30,8 @@ const navItems = (t: TFunction) => [
   { label: t("nav.home"), href: "/" },
   { label: t("nav.features"), href: "/#features" },
   { label: t("nav.howItWork"), href: "/#howItWork" },
-  { label: t("nav.plans"), href: "/plans" },
-  { label: t("nav.faq"), href: "/faq" },
+  { label: t("nav.plans"), href: "/#plans" },
+  { label: t("nav.faq"), href: "/#faq" },
   // { label: t("nav.blog"), href: "/blog" },
   { label: t("nav.support"), href: "/support" },
 ];

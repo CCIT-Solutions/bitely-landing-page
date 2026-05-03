@@ -22,19 +22,20 @@ import { FaSnapchat } from "react-icons/fa6";
 import { AiOutlineYoutube } from "react-icons/ai";
 import Animate from "@/components/animation/Animate";
 import { fade, fadeD1 } from "@/lib/animation";
+import WaveLines from "@/components/shared/WaveLines";
 
 export const ContactSchema = (t: any) =>
   z.object({
-    firstName: z.string().min(2, t("contact.validation.firstNameMin")),
-    lastName: z.string().min(2, t("contact.validation.lastNameMin")),
+    firstName: z.string().min(2, t("support.validation.firstNameMin")),
+    lastName: z.string().min(2, t("support.validation.lastNameMin")),
     phone_number: z
-      .number(t("contact.validation.phoneNumberValid"))
-      .min(9, t("contact.validation.phoneNumberMin")),
+      .number(t("support.validation.phoneNumberValid"))
+      .min(9, t("support.validation.phoneNumberMin")),
     email: z
       .string()
-      .email(t("contact.validation.emailValid"))
-      .min(5, t("contact.validation.emailMin")),
-    message: z.string().min(10, t("contact.validation.messageMin")),
+      .email(t("support.validation.emailValid"))
+      .min(5, t("support.validation.emailMin")),
+    message: z.string().min(10, t("support.validation.messageMin")),
   });
 
 type ContactFormType = z.infer<ReturnType<typeof ContactSchema>>;
@@ -70,24 +71,29 @@ function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen   flex flex-col justify-center px-4">
+    <div className="relative min-h-screen flex flex-col justify-center px-4 pt-24 lg:pt-0 overflow-hidden">
+      {/* Animation wrapper */}
+      <div className="absolute inset-0 overflow-hidden">
+        <WaveLines
+          className="absolute -z-10 opacity-60 rotate-45 -inset-s-250 top-200 
+                 sm:rotate-30 sm:-inset-s-200 sm:top-150 
+                 xl:-rotate-20 xl:-inset-s-100 xl:top-50"
+          svgClassName="w-[130%] h-100 xl:w-[130%] xl:h-full"
+        />
+      </div>
       <Container>
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid  lg:grid-cols-2 gap-16 items-start">
           {/* Left Side - Contact Info */}
           <div className="space-y-12 relative">
             {/* Header */}
             <Animate variants={fade} className=" ">
               <h1 className="text-[56px] font-bold leading-tight mb-4 ">
-                {t("contact.title")}
+                {t("support.title")}
               </h1>
               <p className="text-neutral-500 dark:text-neutral-400 text-lg max-w-md leading-relaxed">
-                {t("contact.subtitle")}
+                {t("support.subtitle")}
               </p>
             </Animate>
-            <DecorativeParticles
-              particleDensity={15}
-              className="-start-10 max-h-70"
-            />
 
             {/* Contact Details */}
             <Animate variants={fadeD1} className="space-y-4">
@@ -150,30 +156,30 @@ function ContactPage() {
             <FormProvider {...form}>
               <div className="space-y-6 ">
                 {/* First Name & Last Name */}
-                <div className="grid grid-cols-2 gap-10">
-                  <CustomField name="firstName" label={t("contact.firstName")}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+                  <CustomField name="firstName" label={t("support.firstName")}>
                     {(field) => (
                       <Input
-                        placeholder={t("contact.firstNamePlaceholder")}
+                        placeholder={t("support.firstNamePlaceholder")}
                         {...field}
-                        className=" bg-white"
+                        className=" bg-background/20! backdrop-blur-xs"
                       />
                     )}
                   </CustomField>
 
-                  <CustomField name="lastName" label={t("contact.lastName")}>
+                  <CustomField name="lastName" label={t("support.lastName")}>
                     {(field) => (
                       <Input
-                        placeholder={t("contact.lastNamePlaceholder")}
+                        placeholder={t("support.lastNamePlaceholder")}
                         {...field}
-                        className="bg-white"
+                        className=" bg-background/20! backdrop-blur-xs"
                       />
                     )}
                   </CustomField>
                 </div>
 
                 {/* Phone Number & Email */}
-                <div className="grid grid-cols-2 gap-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                   <PhoneField
                     label={t("auth.phone")}
                     name="phone_number"
@@ -181,24 +187,24 @@ function ContactPage() {
                     error={errors.phone_number}
                   />
 
-                  <CustomField name="email" label={t("contact.email")}>
+                  <CustomField name="email" label={t("support.email")}>
                     {(field) => (
                       <Input
-                        placeholder={t("contact.emailPlaceholder")}
+                        placeholder={t("support.emailPlaceholder")}
                         {...field}
-                        className="bg-white"
+                        className=" bg-background/20! backdrop-blur-xs"
                       />
                     )}
                   </CustomField>
                 </div>
 
                 {/* Message */}
-                <CustomField name="message" label={t("contact.message")}>
+                <CustomField name="message" label={t("support.message")}>
                   {(field) => (
                     <Textarea
-                      placeholder={t("contact.messagePlaceholder")}
+                      placeholder={t("support.messagePlaceholder")}
                       {...field}
-                      className="min-h-[140px] resize-none rounded-3xl bg-white"
+                      className="min-h-[140px] resize-none rounded-3xl bg-background/20! backdrop-blur-xs"
                     />
                   )}
                 </CustomField>
@@ -210,8 +216,8 @@ function ContactPage() {
                     disabled={isSubmitting}
                     className=" py-6 px-10 text-sm bg-primary hover:bg-primary/80 rounded-full"
                     isSubmitting={isSubmitting}
-                    text="contact.sendMessage"
-                    isSubmittingText="contact.sending"
+                    text="support.sendMessage"
+                    isSubmittingText="support.sending"
                   />
                 </div>
               </div>

@@ -64,7 +64,7 @@ export function PhoneField<TFormValues extends FieldValues>({
         >
           {/* Country Code Select */}
           <Select value={dialCode} onValueChange={setDialCode}>
-            <SelectTrigger className="w-20 h-7 border-0 shadow-none focus:ring-0 focus:outline-none p-0 justify-center focus-visible:border-transparent focus-visible:ring-transparent">
+            <SelectTrigger className="w-20 h-7 border-0 shadow-none focus:ring-0 focus:outline-none p-0 justify-center focus-visible:border-transparent focus-visible:ring-transparen px-3">
               <span className="text-sm">+{dialCode}</span>
             </SelectTrigger>
 
@@ -85,12 +85,18 @@ export function PhoneField<TFormValues extends FieldValues>({
 
           {/* Phone Input */}
           <input
-            {...register(name, { valueAsNumber: true })}
+          {...register(name, {
+  required: required ? "Phone number is required" : false,
+  pattern: {
+    value: /^[0-9\s]+$/,
+    message: "Only numbers allowed",
+  },
+})}
             id={name}
             placeholder="5X XXX XXXX"
             maxLength={13}
             className={cn(
-              "flex-1 bg-transparent outline-none text-sm h-full [&:-webkit-autofill]:shadow-[inset_0_0_0_1000px_white]",
+              "flex-1 bg-transparent outline-none text-sm [&:-webkit-autofill]:shadow-[inset_0_0_0_1000px_white]",
               inputClassName
             )}
           />
