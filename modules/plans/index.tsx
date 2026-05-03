@@ -4,7 +4,7 @@ import Image from "next/image";
 import Container from "@/components/shared/Container";
 // import PlanTapSwitcher from "@/components/plans/PlanTapSwitcher";
 import Plans from "./Plans";
-import PlansForm from "./PlansForm";
+import PlansForm from "../checkout/PlansForm";
 import { Separator } from "@/components/ui/separator";
 import { useLang } from "@/hooks/useLang";
 import Animate from "@/components/animation/Animate";

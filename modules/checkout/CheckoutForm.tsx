@@ -125,10 +125,13 @@ export default function CheckoutForm() {
     form.reset();
   };
 
+  console.log("paymentMethod", paymentMethod);
+  
+
   return (
     <Animate
       variants={fade}
-      className="space-y-6 max-w-md mx-auto order-2 lg:order-1 w-88 lg:w-full"
+      className="space-y-6 mx-auto lg:mx-0 max-w-100 lg:w-full order-2 lg:order-1"
     >
       {/* Payment Method */}
       <div>
@@ -140,8 +143,8 @@ export default function CheckoutForm() {
             onClick={() => setPaymentMethod("credit")}
             className={`flex items-center justify-center gap-2 px-6 py-3 text-xs rounded-full font-medium transition-all cursor-pointer truncate ${
               paymentMethod === "credit"
-                ? "bg-neutral-900 text-white dark:bg-slate-800 border shadow-lg"
-                : "bg-white dark:bg-slate-950 dark:hover:bg-slate-900 border"
+                ? "bg-primary/90  text-primary-foreground hover:bg-primary border" 
+                : "bg-primary-foreground text-primary border shadow-lg"
             }`}
           >
             <HiOutlineCreditCard className="w-4 h-4" />
@@ -150,16 +153,16 @@ export default function CheckoutForm() {
 
           <button
             onClick={() => setPaymentMethod("stc")}
-            className={`px-6 py-3 text-xs rounded-full font-medium transition-all cursor-pointer ${
+            className={`min-h-10 min-w-10 px-6 py-3 text-xs rounded-full font-medium transition-all cursor-pointer ${ 
               paymentMethod === "stc"
-                ? "bg-neutral-900 text-white dark:bg-slate-800 border shadow-lg"
-                : "bg-white dark:bg-slate-950 dark:hover:bg-slate-900 border"
+              ? "bg-primary/90  text-primary-foreground hover:bg-primary border" 
+                : "bg-primary-foreground text-primary border shadow-lg"
             }`}
           >
             <div className=" flex justify-center">
               <Image
                 src={`/media/icons/stc${
-                  paymentMethod === "stc" ? "-light" : ""
+                  paymentMethod === "stc" ? "-light" : "-light"
                 }.png`}
                 alt="STC Pay"
                 width={40}
@@ -173,10 +176,10 @@ export default function CheckoutForm() {
             // disabled={!supportsApplePay}
             className={`flex items-center gap-1 justify-center px-6 py-3 text-xs rounded-full font-medium transition-all cursor-pointer ${
               paymentMethod === "apple"
-                ? "bg-neutral-900 text-white dark:bg-slate-800  border shadow-lg"
+              ? "bg-primary/90  text-primary-foreground hover:bg-primary border" 
                 : supportsApplePay
-                ? "bg-white dark:bg-slate-950 dark:hover:bg-slate-900 border "
-                : "bg-neutral-100 dark:bg-slate-900 text-neutral-400 border  opacity-50"
+                ?  "bg-primary/90  text-primary-foreground hover:bg-primary border" 
+                : "bg-primary-foreground/10 dark:bg-primary-foreground/50 hover:bg-primary-foreground/20 dark:hover:bg-primary-foreground/60 opacity-50"
             }`}
           >
             <Apple className="w-4 h-4" />
@@ -188,7 +191,7 @@ export default function CheckoutForm() {
       {/* Form */}
       <FormProvider {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
-          <div className="bg-white dark:bg-[#22252e] rounded-2xl p-6 shadow-sm space-y-5">
+          <div className="bg-primary-white dark:bg-primary-foreground/20 backdrop-blur-xs rounded-2xl p-6 space-y-5 border ">
             <h2 className="text-base font-medium mb-2  text-foreground/40">
               {t("checkout.cardDetails")}
             </h2>
@@ -251,7 +254,7 @@ export default function CheckoutForm() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-2 mt-4 items-center">
             {/* Terms */}
-            <p className="text-xs text-neutral-500 mt-4 max-w-50">
+            <p className="text-xs text-foreground/50 mt-4 max-w-50">
               {t("checkout.acceptTerms")}
             </p>
 

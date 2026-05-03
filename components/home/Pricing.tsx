@@ -13,6 +13,8 @@ import Heading from "../shared/Heading";
 import { Language } from "@/types/shared";
 import Animate from "../animation/Animate";
 import {  fadeDu4 } from "@/lib/animation";
+import Link from "next/link";
+import Currency from "../icons/Currency";
 
 interface PricingCardProps {
   plan: Plan;
@@ -62,8 +64,8 @@ function PricingCard({ plan, billing, lang, unitLabel }: PricingCardProps) {
 
       {/* Price */}
       <div className="mb-7 flex items-end gap-1">
-        <span className="text-[3.25rem] font-extrabold leading-none tracking-tight text-primbg-primary-foreground">
-          ${price}
+        <span className="text-[3.25rem] font-extrabold leading-none tracking-tight text-primbg-primary-foreground flex items-center gap-2">
+          {price} <Currency className="size-8"/>
         </span>
         <span className="mb-2 text-foreground/40 text-sm font-medium">
           / {unitLabel}
@@ -92,16 +94,17 @@ function PricingCard({ plan, billing, lang, unitLabel }: PricingCardProps) {
       </ul>
 
       {/* CTA */}
-      <Button
+      <Link
+      href={"/checkout"}
         className={cn(
-          "w-full rounded-xl font-semibold tracking-wide text-sm h-12 transition-all duration-200",
+          "flex justify-center items-center w-full rounded-xl font-semibold tracking-wide text-sm h-12 transition-all duration-200",
           plan.featured
             ? "bg-primary-foreground text-white hover:bg-primary-foreground/90 shadow-md"
             : "bg-foreground/2 text-primbg-primary-foreground hover:bg-foreground/5 border border-fobg-foreground/5",
         )}
       >
         {plan.cta[lang]}
-      </Button>
+      </Link>
     </div>
   );
 }

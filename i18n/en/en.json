@@ -140,6 +140,24 @@
       }
     }
   },
+   "plans": {
+    "discount": "Limited Offer",
+    "premium": "Signature Plan",
+    "perMonth": "Per month",
+    "country": "Country",
+    "selectCountry": "Select a country",
+    "saudi": "Saudi Arabia",
+    "uae": "United Arab Emirates",
+    "kuwait": "Kuwait",
+    "promoCode": "Promo Code",
+    "promoPlaceholder": "Enter promo code",
+    "yachtPremium": "Yacht Premium Subscription",
+    "vat": "VAT",
+    "promo": "Promo Discount",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "processing": "Processing..."
+  },
 
   "pricing": {
     "title": "Pay by the <custom>week</custom>, not the year.",

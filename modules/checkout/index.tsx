@@ -9,37 +9,41 @@ import { cn } from "@/lib/utils";
 import DecorativeParticles from "@/components/animation/DecorativeParticles";
 import Animate from "@/components/animation/Animate";
 import { fade } from "@/lib/animation";
+import WaveLines from "@/components/shared/WaveLines";
+import Link from "next/link";
+import PlansForm from "./PlansForm";
 
 const CheckoutPage = () => {
   const { t, isRTL } = useLang();
 
   return (
     <div className="min-h-screen p-6 pb-12 pt-30 sm:pt-40">
-      <Container>
+      {/* Animation wrapper */}
+      <div className="absolute -z-1 inset-0 overflow-hidden">
+        <WaveLines
+          className="absolute -z-10 opacity-60 rotate-45 -inset-s-250 top-200 
+                       sm:rotate-30 sm:-inset-s-200 sm:top-150 
+                       xl:-rotate-20 xl:-inset-s-100 xl:top-50"
+          svgClassName="w-[130%] h-100 xl:w-[130%] xl:h-full"
+        />
+      </div>
+      <Container className="lg:max-w-5xl">
         {/* Header */}
         <Animate
           variants={fade}
           className="flex items-center gap-4 mb-8 relative"
         >
-          <button className="w-12 h-12 rounded-full border shadow-sm flex items-center justify-center hover:shadow-md transition-shadow">
+          <Link href="/" className="w-12 h-12 rounded-full border shadow-sm flex items-center justify-center hover:shadow-md transition-shadow">
             <ArrowLeft
               className={cn("size-5 cursor-pointer", isRTL ? "rotate-180" : "")}
             />
-          </button>
+          </Link>
           <h1 className="text-4xl font-bold">{t("checkout.title")}</h1>
-
-          {/* Decorative dots */}
-          <DecorativeParticles
-            className="-top-10 start-0 w-100 h-100  lg:-start-20 "
-            minSize={3}
-            maxSize={4}
-            particleDensity={15}
-          />
         </Animate>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="flex flex-col lg:flex-row justify-between gap-8 w-full">
           <CheckoutForm />
-          <OrderSummery />
+          <PlansForm />
         </div>
       </Container>
     </div>
