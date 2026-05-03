@@ -32,7 +32,7 @@ const navItems = (t: TFunction) => [
   { label: t("nav.howItWork"), href: "/#howItWork" },
   { label: t("nav.plans"), href: "/plans" },
   { label: t("nav.faq"), href: "/faq" },
-  { label: t("nav.blog"), href: "/blog" },
+  // { label: t("nav.blog"), href: "/blog" },
   { label: t("nav.support"), href: "/support" },
 ];
 
@@ -105,17 +105,13 @@ function Header({ className }: { className?: string }) {
           {navItems(t).map((item) => {
             let isActive = false;
 
-            if (item.href.startsWith("/#")) {
-              // For hash links, check exact hash match
+            if (item.href === "/") {
+              // Home is only active when there's no hash
+              isActive = pathname === "/" && !activeHash;
+            } else if (item.href.startsWith("/#")) {
               const hash = item.href.replace("/", "");
               isActive = pathname === "/" && activeHash === hash;
-
-              // Special case: if on home page with no hash, activate #home link
-              if (item.href === "/#home" && pathname === "/" && !activeHash) {
-                isActive = true;
-              }
             } else {
-              // For regular links, check pathname match
               isActive = pathname === item.href;
             }
 
@@ -123,6 +119,16 @@ function Header({ className }: { className?: string }) {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={
+                  item.href === "/"
+                    ? (e) => {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                        history.pushState(null, "", "/");
+                        setActiveHash("");
+                      }
+                    : undefined
+                }
                 className={cn(
                   "relative text-sm font-medium transition",
                   isActive
@@ -141,8 +147,7 @@ function Header({ className }: { className?: string }) {
         </nav>
 
         <div className="flex items-center gap-4">
-         
-            <LangSwitcher />
+          <LangSwitcher />
 
           <div className="w-10 h-10 rounded-full border border-neutral-200 dark:border-primary/20 flex items-center justify-center hover:bg-neutral-50 dark:hover:bg-primary transition">
             <ThemeSwitcher />

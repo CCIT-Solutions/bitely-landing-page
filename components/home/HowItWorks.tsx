@@ -150,7 +150,7 @@ export default function HowItWorks() {
   const { lang, isRTL } = useLang();
 
   return (
-    <section className="w-full py-16 px-6 ">
+    <section className="w-full pb-16 pt-24 px-6 " id="howItWork">
       {/* Heading */}
       <div className="text-center mb-12">
         <Heading
