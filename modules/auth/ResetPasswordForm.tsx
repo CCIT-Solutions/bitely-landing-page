@@ -53,20 +53,20 @@ export default function ResetPasswordPage() {
       return;
     }
 
-    await apiRequest<null, {}, ResetPasswordType>(
-      AuthApiEndpoints.resetPassword({ ...data, token, email }),
-      {
-        t,
-        setError: form.setError,
-        setLoading: setIsSubmitting,
-        showErrorToast: true,
-        onSuccess: () => {
-          notify(t("auth.passwordResetSuccess"), { type: "success" });
-          form.reset();
-          router.push("/login");
-        },
-      }
-    );
+    // await apiRequest<null, {}, ResetPasswordType>(
+    //   AuthApiEndpoints.resetPassword({ ...data, token, email }),
+    //   {
+    //     t,
+    //     setError: form.setError,
+    //     setLoading: setIsSubmitting,
+    //     showErrorToast: true,
+    //     onSuccess: () => {
+    //       notify(t("auth.passwordResetSuccess"), { type: "success" });
+    //       form.reset();
+    //       router.push("/login");
+    //     },
+    //   }
+    // );
   };
 
   return (

@@ -155,7 +155,7 @@ function Header({ className }: { className?: string }) {
 
           {!isAuthenticated && (
             <Link
-              href="/login"
+              href="/"
               target="_blank"
               className="hidden sm:block px-6 py-2 rounded-full bg-primary text-primary-foreground font-semibold shadow-sm hover:bg-primary/80 transition"
             >

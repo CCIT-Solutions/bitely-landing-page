@@ -19,13 +19,13 @@ export default function LogoutButton({ className, IconClassName }: LogoutButtonP
   const { logout } = useUser();
 
   const handleLogout = async () => {
-    await apiRequest(AuthApiEndpoints.logout({}), {
-      showErrorToast: true,
-      onSuccess: () => {
-        logout();
-        router.push("/");
-      },
-    });
+    // await apiRequest(AuthApiEndpoints.logout({}), {
+    //   showErrorToast: true,
+    //   onSuccess: () => {
+    //     logout();
+    //     router.push("/");
+    //   },
+    // });
   };
 
   return (
