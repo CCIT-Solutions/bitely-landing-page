@@ -15,7 +15,7 @@ export default function CTASection() {
         <div className="flex-1 w-full lg:w-3/5">
           <h1 className={`text-primary-foreground  tracking-[-0.02em] font-bold text-4xl sm:text-6xl ${isRTL ? "xl:text-[6.8rem] leading-[1.06]" : "md:text-7xl lg:text-8xl xl:text-9xl leading-[.9]"} `}>
             <Translate text="home.cta.title.part1" />
-            <em className="italic">
+            <em className="italic ms-2 sm:ms-5 lg:ms-7 xl:ms-8">
               <Translate text="home.cta.title.em" />
             </em>{" "}
             <Translate text="home.cta.title.part2" />
