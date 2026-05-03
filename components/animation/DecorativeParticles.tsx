@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
-import { SparklesCore } from "@/components/shared/sparkles copy";
+// import { SparklesCore } from "@/components/shared/sparkles copy";
 import { cn } from "@/lib/utils";
 
 interface DecorativeParticlesProps {
@@ -15,9 +15,9 @@ interface DecorativeParticlesProps {
 
 const DecorativeParticles: React.FC<DecorativeParticlesProps> = ({
   className,
-  minSize = 3,
-  maxSize = 4,
-  particleDensity = 3,
+  // minSize = 3,
+  // maxSize = 4,
+  // particleDensity = 3,
   rootMargin = "100px",
   unrenderOnExit = false,
 }) => {
@@ -62,7 +62,7 @@ const DecorativeParticles: React.FC<DecorativeParticlesProps> = ({
       )}
     >
       <div className="relative w-full h-full dark:opacity-50">
-        {shouldRender && (
+        {/* {shouldRender && (
           <SparklesCore
             background="transparent"
             minSize={minSize}
@@ -75,7 +75,7 @@ const DecorativeParticles: React.FC<DecorativeParticlesProps> = ({
               "rgba(96, 165, 250, 0.4)",
             ]}
           />
-        )}
+        )} */}
 
         {/* TOP fade */}
         <div className="absolute inset-x-0 top-0 h-20 bg-linear-to-b from-background to-transparent pointer-events-none" />
