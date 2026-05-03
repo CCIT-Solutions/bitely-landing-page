@@ -29,10 +29,10 @@ function PricingCard({ plan, billing, lang, unitLabel }: PricingCardProps) {
   return (
     <div
       className={cn(
-        "relative flex flex-col rounded-2xl border p-7 transition-all duration-300 hover:scale-105 hover:z-2",
+        "relative flex flex-col rounded-2xl border p-7 transition-all duration-300 hover:scale-103 hover:z-2 h-full",
         "bg-background/50 backdrop-blur-xs",
         plan.featured
-          ? "border-primary-foreground shadow-xl scale-[1.03] z-1"
+          ? "border-primary-foreground shadow-xl scale-105 hover:scale-107 z-1"
           : "border-primary/20 shadow-sm hover:shadow-md hover:border-primary/50",
       )}
     >
@@ -140,7 +140,7 @@ export default function Pricing() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 items-start relative">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch relative">
           <h1 className="absolute inset-0 w-full text-center text-[8rem] md:text-[15rem] font-bold text-primary leading-2.5 ">
             Pricing
           </h1>
