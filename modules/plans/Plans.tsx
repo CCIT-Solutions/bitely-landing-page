@@ -89,7 +89,7 @@ export const PlanCard: React.FC<Props> = ({ plan, lang, isRTL, index }) => {
             </span>
           )}
 
-          <h2 className=" text-2xl font-bold">{plan.title[lang]}</h2>
+          <p className=" text-2xl font-bold">{plan.title[lang]}</p>
         </div>
 
         <div className="text-right flex gap-1 items-end">

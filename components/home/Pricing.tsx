@@ -50,7 +50,7 @@ function PricingCard({ plan, billing, lang, unitLabel }: PricingCardProps) {
         <p className="text-xs font-semibold uppercase tracking-[0.15em] text-foreground/40 mb-1">
           {plan.tagline[lang]}
         </p>
-        <h3
+        <p
           className={cn(
             "text-2xl font-bold tracking-tight",
             plan.featured
@@ -59,7 +59,7 @@ function PricingCard({ plan, billing, lang, unitLabel }: PricingCardProps) {
           )}
         >
           {plan.name[lang]}
-        </h3>
+        </p>
       </div>
 
       {/* Price */}

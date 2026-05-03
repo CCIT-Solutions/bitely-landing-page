@@ -22,7 +22,7 @@ function OrderSummery() {
             <div className="inline-block bg-teal-50 text-teal-500 dark:bg-teal-900 text-xs font-semibold px-2 py-1 rounded-full ">
               %25 {t("checkout.off")}
             </div>
-            <h3 className="text-2xl font-bold">{t("checkout.premium")}</h3>
+            <p className="text-2xl font-bold">{t("checkout.premium")}</p>
           </div>
           <div className="text-right">
             <div className="text-sm text-foreground/50">

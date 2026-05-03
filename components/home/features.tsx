@@ -133,9 +133,9 @@ function FeatureCard({ feature }: { feature: Feature }) {
         </div>
 
         {/* Title */}
-        <h3 className="text-[14.5px] font-semibold mb-2.5 leading-snug tracking-tight text-foreground  group-hover:text-background transition-colors">
+        <p className="text-[14.5px] font-semibold mb-2.5 leading-snug tracking-tight text-foreground  group-hover:text-background transition-colors">
           {feature.title[lang]}
-        </h3>
+        </p>
 
         {/* Description */}
         <p className="text-[13px] leading-relaxed text-foreground/50  group-hover:text-background/80 transition-colors">

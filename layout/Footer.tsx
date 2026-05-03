@@ -111,9 +111,9 @@ export default function Footer({
 
               {/* Newsletter */}
               <div className="flex flex-col justify-center sm:max-w-100">
-                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-50">
+                  <p className="text-xl font-semibold text-neutral-900 dark:text-neutral-50">
                     <Translate text="footer.newsletter.title" />
-                  </h3>
+                  </p>
 
                   <p className="text-neutral-500 text-sm mt-2 mb-6">
                     <Translate text="footer.newsletter.description" />

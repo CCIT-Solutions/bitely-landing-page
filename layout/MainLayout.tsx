@@ -103,14 +103,14 @@ export default function MainLayout({
     }
 
     const checkProfile = async () => {
-      await apiRequest<UserData, { token: string }>(
-        ProfileApiEndpoints.user(),
-        {
-          showErrorToast: false,
-          onSuccess: () => setCompleteProfile(false),
-          onError: () => setCompleteProfile(true),
-        }
-      );
+      // await apiRequest<UserData, { token: string }>(
+      //   ProfileApiEndpoints.user(),
+      //   {
+      //     showErrorToast: false,
+      //     onSuccess: () => setCompleteProfile(false),
+      //     onError: () => setCompleteProfile(true),
+      //   }
+      // );
     };
 
     checkProfile();
