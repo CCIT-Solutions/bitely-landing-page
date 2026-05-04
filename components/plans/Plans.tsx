@@ -350,7 +350,7 @@ export const PlanCard: React.FC<PlanCardProps> = ({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={cn(
-        "rounded-3xl px-10 py-6 mb-6 border",
+        "rounded-3xl px-10 py-6 border",
         isRec
           ? "bg-primary-foreground shadow-xl text-background"
           : "hover:shadow-md  dark:bg-primary-foreground/20 backdrop-blur-xs ",
