@@ -1,28 +1,28 @@
 "use client";
-import React, { useState } from "react";
-import { faq } from "@/data/FAQ";
-import FAQItem from "@/components/faq/FAQItem";
+import { useState } from "react";
+// import { faq } from "@/data/FAQ";
+// import FAQItem from "@/components/faq/FAQItem";
 import { useLang } from "@/hooks/useLang";
 import Link from "next/link";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+// import { motion, AnimatePresence, Variants } from "framer-motion";
 import Animate from "@/components/animation/Animate";
 import { fade } from "@/lib/animation";
 import Heading from "../shared/Heading";
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, ease: "easeOut", delay: index * 0.2 },
-  }),
-};
+// const itemVariants: Variants = {
+//   hidden: { opacity: 0, y: 24 },
+//   visible: (index: number) => ({
+//     opacity: 1,
+//     y: 0,
+//     transition: { duration: 0.45, ease: "easeOut", delay: index * 0.2 },
+//   }),
+// };
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(-1);
-  const { t, lang } = useLang();
+  const { t } = useLang();
 
-  const faqData = faq[lang];
+  // const faqData = faq[lang];
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? -1 : index);
@@ -46,7 +46,7 @@ export default function FAQ() {
         </Animate>
 
         {/* FAQ Items */}
-        <div className="mb-14 flex flex-col gap-3 max-w-3xl mx-auto">
+        {/* <div className="mb-14 flex flex-col gap-3 max-w-3xl mx-auto">
           <AnimatePresence>
             {faqData.map((faq, index) => (
               <motion.div
@@ -67,7 +67,7 @@ export default function FAQ() {
               </motion.div>
             ))}
           </AnimatePresence>
-        </div>
+        </div> */}
 
         {/* Bottom Section */}
         <Animate variants={fade}  className="text-center flex flex-col items-center">
