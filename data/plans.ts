@@ -3,7 +3,7 @@ export interface Plan {
   name: { en: string; ar: string };
   tagline: { en: string; ar: string };
   badge?: { en: string; ar: string };
-  price_weekly: number;
+  price_yearly: number;
   price_monthly: number;
   cta: { en: string; ar: string };
   featured: boolean;
@@ -15,7 +15,7 @@ export const plans: Plan[] = [
     id: "starter",
     name: { en: "Starter", ar: "الأساسي" },
     tagline: { en: "Launch your subscription flow", ar: "ابدأ نظام الاشتراكات" },
-    price_weekly: 42,
+    price_yearly: 1500,
     price_monthly: 148,
     cta: { en: "Start now", ar: "ابدأ الآن" },
     featured: false,
@@ -32,7 +32,7 @@ export const plans: Plan[] = [
     name: { en: "Growth", ar: "النمو" },
     tagline: { en: "Manage and optimize operations", ar: "إدارة وتحسين العمليات" },
     badge: { en: "Most chosen", ar: "الأكثر اختياراً" },
-    price_weekly: 98,
+    price_yearly: 3450,
     price_monthly: 345,
     cta: { en: "Start growing", ar: "ابدأ التوسع" },
     featured: true,
@@ -50,7 +50,7 @@ export const plans: Plan[] = [
     id: "scale",
     name: { en: "Scale", ar: "الاحترافي" },
     tagline: { en: "Operate at full capacity", ar: "تشغيل كامل باحترافية" },
-    price_weekly: 142,
+    price_yearly: 5000,
     price_monthly: 499,
     cta: { en: "Scale now", ar: "ابدأ الاحتراف" },
     featured: false,

@@ -140,7 +140,21 @@
       }
     }
   },
-   "plans": {
+  "plans": {
+    "title": "Pay by the <custom>month</custom>, not the year.",
+    "subtitle": "Month-to-month. No contracts. The longer you stay, the quieter it gets, and the less you pay per plate.",
+    "toggle": {
+      "yearly": "yearly",
+      "monthly": "Monthly",
+      "save": "SAVE 12%"
+    },
+    "footer": "Cancel anytime. No hidden fees. Meals crafted fresh daily.",
+    "unit": {
+      "yearly": "yr",
+      "monthly": "mo"
+    },
+    "mostChosen": "Most Chosen",
+    "vatDescription": "All prices in SAR, including VAT & Fees",
     "discount": "Limited Offer",
     "premium": "Growth Plan",
     "perMonth": "Per month",
@@ -157,21 +171,6 @@
     "total": "Total",
     "checkout": "Proceed to Checkout",
     "processing": "Processing..."
-  },
-
-  "pricing": {
-    "title": "Pay by the <custom>week</custom>, not the year.",
-    "subtitle": "Month-to-month. No contracts. The longer you stay, the quieter it gets, and the less you pay per plate.",
-    "toggle": {
-      "weekly": "Weekly",
-      "monthly": "Monthly",
-      "save": "SAVE 12%"
-    },
-    "footer": "Cancel anytime. No hidden fees. Meals crafted fresh daily.",
-    "unit": {
-      "weekly": "wk",
-      "monthly": "mo"
-    }
   },
 
   "menu": {

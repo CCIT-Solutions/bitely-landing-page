@@ -1,30 +1,24 @@
 "use client";
-
-import { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useLang } from "@/hooks/useLang";
-import { plans, type Plan } from "@/data/pricing";
-import PlanTapSwitcher from "../plans/PlanTapSwitcher";
-import Heading from "../shared/Heading";
+import { type Plan } from "@/data/plans";
 import { Language } from "@/types/shared";
-import Animate from "../animation/Animate";
-import {  fadeDu4 } from "@/lib/animation";
 import Link from "next/link";
 import Currency from "../icons/Currency";
+import { memo } from "react";
 
-interface PricingCardProps {
+interface HomePlanCardProps {
   plan: Plan;
-  billing: "weekly" | "monthly";
+  billing: "yearly" | "monthly";
   lang: Language;
   unitLabel: string;
 }
 
-function PricingCard({ plan, billing, lang, unitLabel }: PricingCardProps) {
-  const price = billing === "weekly" ? plan.price_weekly : plan.price_monthly;
+
+function HomePlanCard({ plan, billing, lang, unitLabel }: HomePlanCardProps) {
+  const price = billing === "yearly" ? plan.price_yearly : plan.price_monthly;
 
   return (
     <div
@@ -109,68 +103,4 @@ function PricingCard({ plan, billing, lang, unitLabel }: PricingCardProps) {
   );
 }
 
-// ─── Main Pricing Section ─────────────────────────────────────────────────────
-export default function Pricing() {
-  const { t, lang } = useLang();
-  const [billing, setBilling] = useState<"weekly" | "monthly">("weekly");
-
-  const unitLabel =
-    billing === "weekly" ? t("pricing.unit.weekly") : t("pricing.unit.monthly");
-
-  return (
-    <section className="min-h-screen px-4 py-24" id="plans">
-      <div className="mx-auto max-w-5xl">
-        {/* Heading */}
-
-        <div className="mb-14 text-center">
-          <Heading
-            i18nKey={"pricing.title"}
-            components={{
-              custom: <span className="text-primary" />,
-            }}
-          />
-          <p className="mx-auto max-w-lg text-foreground/60 text-base leading-relaxed">
-            {t("pricing.subtitle")}
-          </p>
-        </div>
-
-        {/* Billing Toggle */}
-        <div className="mb-16 md:mb-26">
-          <PlanTapSwitcher billing={billing} setBilling={setBilling} />
-        </div>
-
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch relative">
-          <h1 className="absolute inset-0 w-full text-center text-[8rem] md:text-[15rem] font-bold text-primary leading-2.5 ">
-            Pricing
-          </h1>
-
-          {plans.map((plan, i) => (
-            <Animate
-              key={i}
-              transition={{
-                duration: 0.6,
-                delay: 0.6 + i * 0.1,
-                ease: "easeInOut",
-              }}
-            
-              variants={fadeDu4}
-            >
-              <PricingCard
-                plan={plan}
-                billing={billing}
-                lang={lang}
-                unitLabel={unitLabel}
-              />
-            </Animate>
-          ))}
-        </div>
-
-        {/* Footer note */}
-        <p className="mt-10 text-center text-xs text-foreground/60 tracking-wide">
-          {t("pricing.footer")}
-        </p>
-      </div>
-    </section>
-  );
-}
+export default memo(HomePlanCard)

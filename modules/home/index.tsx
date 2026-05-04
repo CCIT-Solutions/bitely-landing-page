@@ -4,7 +4,7 @@ const Hero = dynamic(() => import("@/components/home/hero"));
 // const Menu = dynamic(() => import("@/components/home/Menu"));
 const Features = dynamic(() => import("@/components/home/features"));
 const HowItWorks = dynamic(() => import("@/components/home/HowItWorks"));
-const Pricing = dynamic(() => import("@/components/home/Pricing"));
+const Plans = dynamic(() => import("@/components/home/Plans"));
 // const FAQ = dynamic(() => import("@/components/home/FAQ"));
 const CTA = dynamic(() => import("@/components/home/CTA"));
 
@@ -26,7 +26,7 @@ function Home() {
      
       {/* <Testimonial /> */}
       {/* <FindYourPLan />  */}
-      <Pricing/>
+      <Plans/>
       {/* <FAQ /> */}
       {/* <Community /> */}
        <CTA />

@@ -4,7 +4,6 @@ import { faqCategories, FAQCategory } from "@/data/FAQ";
 import FAQItem from "@/components/faq/FAQItem";
 import { useLang } from "@/hooks/useLang";
 import Link from "next/link";
-import DecorativeParticles from "@/components/animation/DecorativeParticles";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Animate from "@/components/animation/Animate";
 import { fade } from "@/lib/animation";

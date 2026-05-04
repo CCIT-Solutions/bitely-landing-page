@@ -12,16 +12,16 @@ export default function PlanTapSwitcher({
   className,
   // size = "lg",
 }: {
-  billing: "weekly" | "monthly";
-  setBilling: Dispatch<SetStateAction<"weekly" | "monthly">>;
+  billing: "yearly" | "monthly";
+  setBilling: Dispatch<SetStateAction<"yearly" | "monthly">>;
   className?: string;
   // size?: "sm" | "md" | "lg";
 }) {
   const { t } = useLang();
 
   const tabs = [
-    { key: "weekly", label: t("pricing.toggle.weekly") },
-    { key: "monthly", label: t("pricing.toggle.monthly") },
+    { key: "yearly", label: t("plans.toggle.yearly") },
+    { key: "monthly", label: t("plans.toggle.monthly") },
   ];
 
   return (
@@ -37,7 +37,7 @@ export default function PlanTapSwitcher({
             return (
               <button
                 key={tab.key}
-                onClick={() => setBilling(tab.key as "weekly" | "monthly")}
+                onClick={() => setBilling(tab.key as "yearly" | "monthly")}
                 className={cn(
                   "relative rounded-full font-bold transition-colors duration-300 z-10 cursor-pointer px-6 py-2 text-base",
                   isActive
@@ -68,7 +68,7 @@ export default function PlanTapSwitcher({
                       " text-[10px] font-bold tracking-wider px-2 py-0.5 rounded-full border-0 ms-2 border-primary bg-primary dark:bg-primary text-primary-foreground dark:text-primary-foreground"
                     )}
                   >
-                    {t("pricing.toggle.save")}
+                    {t("plans.toggle.save")}
                   </Badge>
                 )}
               </button>

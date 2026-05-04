@@ -3,57 +3,46 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Container from "@/components/shared/Container";
 // import PlanTapSwitcher from "@/components/plans/PlanTapSwitcher";
-import Plans from "./Plans";
+import Plans from "../../components/plans/Plans";
 import PlansForm from "../checkout/PlansForm";
 import { Separator } from "@/components/ui/separator";
 import { useLang } from "@/hooks/useLang";
 import Animate from "@/components/animation/Animate";
 import { fade } from "@/lib/animation";
+import Heading from "@/components/shared/Heading";
+import PlanTapSwitcher from "@/components/plans/PlanTapSwitcher";
 
 export default function YachtPlansPage() {
-  const [activeTab, setActiveTab] = useState("cars");
+  const [billing, setBilling] = useState<"yearly" | "monthly">("monthly");
   const { t } = useLang();
 
+  const unitLabel =
+    billing === "yearly" ? t("plans.unit.yearly") : t("plans.unit.monthly");
+
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen px-4 py-44">
       <Container>
-        <Animate variants={fade} className="w-full h-100 relative mb-16">
-          <Image
-            src={"/media/images/plans/map.png"}
-            alt="Globe Map"
-            width={600}
-            height={400}
-            className="w-full h-full object-cover mt-8 rounded-4xl"
+        {/* Heading */}
+
+        <div className="text-center">
+          <Heading
+            i18nKey={"plans.title"}
+            components={{
+              custom: <span className="text-primary" />,
+            }}
           />
-
-          <div className="absolute inset-0 w-full h-full flex justify-center items-center text-5xl md:text-6xl text-center font-bold">
-            <h1 className="max-w-175 text-black">{t("plans.pageTitle")}</h1>
-          </div>
-
-          {/* <PlanTapSwitcher
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-            className="-mt-10 z-10 relative"
-            size="md"
-          /> */}
-        </Animate>
-
-        <div className="flex items-center gap-4">
-          <h1 className="text-4xl font-bold">
-            {activeTab === "cars"
-              ? t("plans.carsPlans")
-              : t("plans.yachtsPlans")}
-          </h1>
-
-          <span className="bg-teal-100 text-teal-400 dark:bg-teal-950 px-4 py-1 rounded-full text-sm font-medium">
-            {t("plans.totalPlans", { count: 3 })}
-          </span>
+          <p className="mx-auto max-w-lg text-foreground/60 text-base leading-relaxed">
+            {t("plans.subtitle")}
+          </p>
         </div>
 
-        <Separator className="mt-10 mb-6" />
+        {/* Billing Toggle */}
+        <div className="my-16">
+          <PlanTapSwitcher billing={billing} setBilling={setBilling} />
+        </div>
 
         <div className="grid lg:grid-cols-[1fr_360px] gap-8">
-          <Plans />
+          <Plans billing={billing}/>
           <PlansForm />
         </div>
       </Container>
