@@ -485,7 +485,7 @@ export default function Plans({ billing }: { billing: "yearly" | "monthly" }) {
   const { lang, isRTL } = useLang();
 
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       {plans.map((plan, index) => (
         <PlanCard
           key={plan.id}
