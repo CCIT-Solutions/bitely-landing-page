@@ -421,7 +421,7 @@ export const PlanCard: React.FC<PlanCardProps> = ({
             <p
               className={cn(
                 "text-[11px] font-semibold uppercase tracking-widest mb-3",
-                isRec ? "" : "text-foreground/50",
+                isRec ? "dark:text-white/60" : "text-foreground/50",
               )}
             >
               {section.label[lang]}
