@@ -23,6 +23,8 @@ import { cn } from "@/lib/utils";
 import { fadeD1 } from "@/lib/animation";
 import Animate from "@/components/animation/Animate";
 import Currency from "@/components/icons/Currency";
+import { useRouter } from "next/navigation";
+import { Controller } from "react-hook-form";
 
 export const PlansSchema = (t: any) =>
   z.object({
@@ -31,7 +33,7 @@ export const PlansSchema = (t: any) =>
       .email(t("auth.validation.emailValid"))
       .min(5, t("auth.validation.emailMin")),
     phone_number: z
-      .number(t("auth.validation.phoneNumberValid"))
+      .string(t("auth.validation.phoneNumberValid"))
       .min(9, t("auth.validation.phoneNumberMin")),
     country: z.string().min(1, "Please select a country"),
     promo_code: z.string().optional(),
@@ -43,6 +45,7 @@ function PlansForm() {
   const { t, isRTL } = useLang();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [promoApplied, setPromoApplied] = useState(false);
+  const router = useRouter();
 
   const form = useForm<PlansFormType>({
     resolver: zodResolver(PlansSchema(t)),
@@ -57,6 +60,7 @@ function PlansForm() {
   const {
     handleSubmit,
     register,
+    setValue,
     formState: { errors },
     watch,
   } = form;
@@ -73,20 +77,21 @@ function PlansForm() {
     setIsSubmitting(true);
     await new Promise((res) => setTimeout(res, 1500));
     console.log("Plans Data:", data);
+    router.push("/checkout");
     setIsSubmitting(false);
   };
 
   const basePrice = 250;
-  const vat = basePrice* .14;
+  const vat = basePrice * 0.14;
   const discount = 50;
   const total = basePrice + vat - discount;
 
   return (
     <Animate
       variants={fadeD1}
-      className="lg:sticky lg:top-24 h-fit mx-auto lg:mx-0 max-w-100 lg:w-full   order-1 lg:order-2"
+      className="lg:sticky lg:top-24 h-fit mx-auto lg:mx-0 max-w-100 lg:w-full order-1 lg:order-2"
     >
-      <div className="bg-primary-white dark:bg-primary-foreground/20 backdrop-blur-xs  rounded-3xl p-6 border">
+      <div className="dark:bg-primary-foreground/20 backdrop-blur-xs rounded-3xl p-6 border">
         <div className="flex items-center justify-between">
           <div>
             <span className="text-primary-foreground bg-primary dark:bg-primary-foreground/80 dark:text-primary py-1 px-3 rounded-full text-xs font-medium">
@@ -99,7 +104,7 @@ function PlansForm() {
               {t("plans.perMonth")}
             </span>
             <div className="text-2xl font-bold flex items-center gap-2">
-              {basePrice.toLocaleString()} <Currency className="size-5"/>
+              {basePrice.toLocaleString()} <Currency className="size-5" />
             </div>
           </div>
         </div>
@@ -124,46 +129,38 @@ function PlansForm() {
               register={register}
               error={errors.phone_number}
             />
-
-            <div>
-              <label className="block text-sm font-medium mb-2">
-                {t("plans.country")}
-              </label>
-
-              <Select
-                onValueChange={(value) =>
-                  register("country").onChange({ target: { value } })
-                }
-                defaultValue=""
-                dir={isRTL ? "rtl" : "ltr"}
-              >
-                <SelectTrigger
-                  className={`w-full px-4 py-6 border focus:outline-none transition-colors
-                    ${
+            <Controller
+              name="country"
+              control={form.control}
+              render={({ field }) => (
+                <Select
+                  onValueChange={field.onChange}
+                  value={field.value}
+                  dir={isRTL ? "rtl" : "ltr"}
+                >
+                  <SelectTrigger
+                    className={`w-full px-4 py-6 border ${
                       errors.country
                         ? "border-red-500"
                         : "border-neutral-200 dark:border-neutral-600"
-                    }
-                  `}
-                  aria-label="Select Country"
-                >
-                  <SelectValue placeholder={t("plans.selectCountry")} />
-                </SelectTrigger>
+                    }`}
+                  >
+                    <SelectValue placeholder={t("plans.selectCountry")} />
+                  </SelectTrigger>
 
-                <SelectContent>
-                  <SelectItem value="SA">{t("plans.saudi")}</SelectItem>
-                  <SelectItem value="AE">{t("plans.uae")}</SelectItem>
-                  <SelectItem value="KW">{t("plans.kuwait")}</SelectItem>
-                </SelectContent>
-              </Select>
-
-              {errors.country && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.country.message}
-                </p>
+                  <SelectContent>
+                    <SelectItem value="SA">{t("plans.saudi")}</SelectItem>
+                    <SelectItem value="AE">{t("plans.uae")}</SelectItem>
+                    <SelectItem value="KW">{t("plans.kuwait")}</SelectItem>
+                  </SelectContent>
+                </Select>
               )}
-            </div>
-
+            />
+            {errors.country && (
+  <p className="text-red-500 text-sm mt-1">
+    {errors.country.message}
+  </p>
+)}
             <Separator className="my-6 dark:bg-primary/10" />
 
             <div className="mb-5">
@@ -188,7 +185,7 @@ function PlansForm() {
                   <ArrowRight
                     className={cn(
                       "w-4 h-4 text-white",
-                      isRTL ? "rotate-180" : ""
+                      isRTL ? "rotate-180" : "",
                     )}
                   />
                 </button>
@@ -200,28 +197,35 @@ function PlansForm() {
                 <span className="text-foreground/50">
                   {t("plans.yachtPremium")}
                 </span>
-                <span className="font-medium flex items-center gap-1">  {basePrice}<Currency className="size-4"/></span>
+                <span className="font-medium flex items-center gap-1">
+                  {" "}
+                  {basePrice}
+                  <Currency className="size-4" />
+                </span>
               </div>
 
               <div className="flex justify-between text-sm">
-                <span className="text-foreground/50">
-                  {t("plans.vat")}
+                <span className="text-foreground/50">{t("plans.vat")}</span>
+                <span className="font-medium flex items-center gap-1">
+                  {" "}
+                  {vat}
+                  <Currency className="size-4" />
                 </span>
-                <span className="font-medium flex items-center gap-1">  {vat}<Currency className="size-4"/></span>
               </div>
 
               <div className="flex justify-between text-sm">
-                <span className="text-foreground/50">
-                  {t("plans.promo")}
-                </span>
+                <span className="text-foreground/50">{t("plans.promo")}</span>
                 <span className="font-medium flex items-center gap-1 text-primary">
-                   {discount} <Currency className="size-4"/>
+                  {discount} <Currency className="size-4" />
                 </span>
               </div>
 
               <div className="flex justify-between items-center">
                 <span className="font-medium text-lg">{t("plans.total")}</span>
-                <span className="font-medium text-xl flex items-center gap-1"> {total} <Currency className="size-5"/></span>
+                <span className="font-medium text-xl flex items-center gap-1">
+                  {" "}
+                  {total} <Currency className="size-5" />
+                </span>
               </div>
             </div>
 

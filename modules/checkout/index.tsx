@@ -6,12 +6,10 @@ import Container from "@/components/shared/Container";
 import CheckoutForm from "./CheckoutForm";
 import OrderSummery from "./OrderSummery";
 import { cn } from "@/lib/utils";
-import DecorativeParticles from "@/components/animation/DecorativeParticles";
 import Animate from "@/components/animation/Animate";
 import { fade } from "@/lib/animation";
 import WaveLines from "@/components/shared/WaveLines";
 import Link from "next/link";
-import PlansForm from "./PlansForm";
 
 const CheckoutPage = () => {
   const { t, isRTL } = useLang();
@@ -33,7 +31,7 @@ const CheckoutPage = () => {
           variants={fade}
           className="flex items-center gap-4 mb-8 relative"
         >
-          <Link href="/" className="w-12 h-12 rounded-full border shadow-sm flex items-center justify-center hover:shadow-md transition-shadow">
+          <Link href="/plans" className="w-12 h-12 rounded-full border shadow-sm flex items-center justify-center hover:shadow-md transition-shadow">
             <ArrowLeft
               className={cn("size-5 cursor-pointer", isRTL ? "rotate-180" : "")}
             />
@@ -43,7 +41,7 @@ const CheckoutPage = () => {
 
         <div className="flex flex-col lg:flex-row justify-between gap-8 w-full">
           <CheckoutForm />
-          <PlansForm />
+          <OrderSummery />
         </div>
       </Container>
     </div>

@@ -169,6 +169,7 @@
     "vat": "VAT",
     "promo": "Promo Discount",
     "total": "Total",
+    "subscription": "Subscription",
     "checkout": "Proceed to Checkout",
     "processing": "Processing..."
   },
