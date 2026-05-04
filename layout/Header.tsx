@@ -14,6 +14,7 @@ import Container from "@/components/shared/Container";
 import LangSwitcher from "@/components/shared/LangSwitcher";
 import Logo from "@/components/shared/Logo";
 import ThemeSwitcher from "@/components/shared/ThemeSwitcher";
+import { useRouter } from "next/navigation";
 
 import {
   Sheet,
@@ -39,7 +40,7 @@ const navItems = (t: TFunction) => [
 function Header({ className }: { className?: string }) {
   const { t, isRTL } = useLang();
   const { isAuthenticated } = useUser();
-
+  const router = useRouter();
   const pathname = usePathname();
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -123,9 +124,9 @@ function Header({ className }: { className?: string }) {
                   item.href === "/"
                     ? (e) => {
                         e.preventDefault();
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                        history.pushState(null, "", "/");
+                        router.push("/");
                         setActiveHash("");
+                        window.scrollTo({ top: 0, behavior: "smooth" });
                       }
                     : undefined
                 }
