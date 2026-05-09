@@ -10,7 +10,7 @@ import Heading from "../shared/Heading";
 import Translate from "../shared/Translate";
 import { useLang } from "@/hooks/useLang";
 import { useInView } from "react-intersection-observer";
-import WaveLines from "../shared/WaveLines";
+import WaveLines from "../animation/WaveLines";
 import Calendar from "../icons/Calendar";
 import { memo } from "react";
 
@@ -150,7 +150,11 @@ export function FeaturesSection() {
   const { ref, inView } = useInView({ triggerOnce: true, rootMargin: "200px" });
 
   return (
-    <section ref={ref} className="relative min-h-screen py-24 font-sans" id="features">
+    <section
+      ref={ref}
+      className="relative min-h-screen py-24 font-sans overflow-hidden xl:overflow-visible"
+      id="features"
+    >
       <WaveLines
         className="absolute inset-0 -z-10 opacity-60 rotate-45 -inset-s-200 top-200 sm:rotate-45 sm:-inset-s-200 sm:top-100 md:-rotate-40 md:-inset-s-200 md:top-240 lg:-rotate-30 lg:-inset-s-200 lg:top-150 xl:-rotate-20 xl:-inset-s-100 xl:top-50"
         svgClassName="

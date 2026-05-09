@@ -22,7 +22,7 @@ import { FaSnapchat } from "react-icons/fa6";
 import { AiOutlineYoutube } from "react-icons/ai";
 import Animate from "@/components/animation/Animate";
 import { fade, fadeD1 } from "@/lib/animation";
-import WaveLines from "@/components/shared/WaveLines";
+import WaveLines from "@/components/animation/WaveLines";
 
 export const ContactSchema = (t: any) =>
   z.object({

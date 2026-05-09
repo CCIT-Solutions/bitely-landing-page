@@ -8,7 +8,7 @@ import OrderSummery from "./OrderSummery";
 import { cn } from "@/lib/utils";
 import Animate from "@/components/animation/Animate";
 import { fade } from "@/lib/animation";
-import WaveLines from "@/components/shared/WaveLines";
+import WaveLines from "@/components/animation/WaveLines";
 import Link from "next/link";
 
 const CheckoutPage = () => {
@@ -31,7 +31,10 @@ const CheckoutPage = () => {
           variants={fade}
           className="flex items-center gap-4 mb-8 relative"
         >
-          <Link href="/plans" className="w-12 h-12 rounded-full border shadow-sm flex items-center justify-center hover:shadow-md transition-shadow">
+          <Link
+            href="/plans"
+            className="w-12 h-12 rounded-full border shadow-sm flex items-center justify-center hover:shadow-md transition-shadow"
+          >
             <ArrowLeft
               className={cn("size-5 cursor-pointer", isRTL ? "rotate-180" : "")}
             />

@@ -19,7 +19,7 @@ export default function Plans() {
     billing === "yearly" ? t("plans.unit.yearly") : t("plans.unit.monthly");
 
   return (
-    <section className="min-h-screen px-4 py-24" id="plans">
+    <section className="min-h-screen px-4 py-24 overflow-hidden" id="plans">
       <div className="mx-auto max-w-5xl">
         {/* Heading */}
 
