@@ -11,9 +11,10 @@ import MinimalLayout from "./MinimalLayout";
 import AppLayout from "./AppLayout";
 import CookieConsent from "@/components/shared/CoockieConsent";
 import SessionLayout from "./SessionLayout";
-import ProfileApiEndpoints from "@/services/profile/api";
-import { apiRequest } from "@/lib/api/api";
-import { UserData } from "@/types/auth";
+// import ProfileApiEndpoints from "@/services/profile/api";
+// import { apiRequest } from "@/lib/api/api";
+// import { UserData } from "@/types/auth";
+import { usePathname } from "next/navigation";
 
 const LazyLenis = dynamic(
   () => import("lenis/react").then((mod) => mod.ReactLenis),
@@ -24,6 +25,19 @@ interface MainLayoutProps {
   children: ReactNode;
   minimal?: boolean;
   preventLinks?: boolean;
+}
+
+
+
+
+export function ScrollToTop() {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
 }
 
 export default function MainLayout({
@@ -134,6 +148,7 @@ export default function MainLayout({
 
   const content = (
     <AuthInitializer>
+      <ScrollToTop />
       <LayoutComponent>
         {/* {completeProfile ? (
           <CompleteProfile onSuccess={() => setCompleteProfile(false)} />
