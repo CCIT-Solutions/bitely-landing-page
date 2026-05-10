@@ -14,7 +14,7 @@ const generateWavePath = (
   for (let i = 0; i <= points; i++) {
     const x = (i / points) * width;
 
-    // 🧠 Combine multiple waves (this breaks repetition)
+    // Combine multiple waves (this breaks repetition)
     const y =
       height / 2 +
       Math.sin(x * 0.01 + phase + index * 0.4) * (20 + index * 3) + // main wave
@@ -40,7 +40,7 @@ const WaveLines = ({
     let frame: number;
 
     const animate = () => {
-      setPhase((prev) => prev + 0.02);
+      setPhase((prev) => prev + 0.003);
       frame = requestAnimationFrame(animate);
     };
 
