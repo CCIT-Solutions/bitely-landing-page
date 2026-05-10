@@ -118,7 +118,7 @@ const features: Feature[] = [
 function FeatureCard({ feature }: { feature: Feature }) {
   const { lang } = useLang();
   return (
-    <div className="group relative rounded-2xl overflow-hidden cursor-default transition-all duration-300 border border-foreground/10 bg-background/5 backdrop-blur-xs hover:bg-primary hover:border-primary ">
+    <div className="group relative rounded-2xl overflow-hidden cursor-default transition-all duration-300 border border-foreground/10 bg-background/5 backdrop-blur-xs hover:bg-primary-foreground hover:dark:bg-primary hover:border-primary ">
       <div className="relative p-6">
         <div className="flex justify-between w-full">
           {/* Icon */}
